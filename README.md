@@ -15,20 +15,9 @@ Copyright Cohesity 2026, SPDX-License-Identifier: Apache-2.0
 
 ## Sample output
 
-Screenshots of every tab are in [claude/README.md](claude/README.md) (lab data, names blurred).
-
 ![Fleet tab](docs/screenshots/fleet-health-claude.png)
 
-| Tab | Screenshot |
-|---|---|
-| Fleet | [fleet-health-claude.png](docs/screenshots/fleet-health-claude.png) |
-| Capacity | [capacity-claude.png](docs/screenshots/capacity-claude.png) |
-| Connectivity & Alerts | [connectivity-and-alerts-claude.png](docs/screenshots/connectivity-and-alerts-claude.png) |
-| Compliance Check | [compliance-check-claude.png](docs/screenshots/compliance-check-claude.png) |
-| Run Metrics | [run-metrics-claude.png](docs/screenshots/run-metrics-claude.png) |
-| Settings | [settings-claude.png](docs/screenshots/settings-claude.png) |
-| LLM usage disclaimer | [llm-usage-disclaimer-claude.png](docs/screenshots/llm-usage-disclaimer-claude.png) |
-| Audit trail | [audit-trail-claude.png](docs/screenshots/audit-trail-claude.png) |
+Screenshots of every tab, with lab data and names blurred, are in [claude/README.md](claude/README.md).
 
 ## What you get
 
