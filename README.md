@@ -13,6 +13,23 @@ Copyright Cohesity 2026, SPDX-License-Identifier: Apache-2.0
 - Refresh: on request (the "Refresh from Helios" link opens a new Claude chat with the command typed in; press Enter there, then reload the page; a "Copy command" button copies it instead), or on a schedule that you set in the Settings tab ("Refresh schedule" card: every day, weekdays or weekly, a time and the time zone you mean, or off). The skill does not ask about scheduling in chat: at the start of every run it reads your saved request and applies it to Claude's scheduler (scheduled task `cohesity-fleet-health-refresh`; the skill converts the requested time from your time zone to the local time of the machine running Claude, so the card can show both, and a daylight saving change in either zone can shift the run by one hour until the next apply; it is turned off, never deleted). After you save a change the card says "Not applied yet. Click Apply in Claude": the link opens a Claude chat that applies the saved schedule without pulling any Helios data (schedule-only mode) and the card then shows "In sync". The card shows what the skill saw in the scheduler at its last run; scheduled tasks run only while Claude is open on that computer (they may move to the cloud later). The page shows "Auto-refreshes ..." and "Refreshes ..." only when a schedule exists and is on; 5 fleet calls per run (clusters, 3 report previews, ONE unfiltered open-alerts call filtered to the six infrastructure categories in the script; 4 more category calls only when the 2,000-alert cap is reached, then only the categories that stay lower bounds, `kNodeHealth` and `kDataPath`, show "N+" and the four categories the follow-up calls read completely show exact numbers), plus, only when Cohesity AI agents are on in Settings (off by default), 1 troubleshooting list call and up to 2 triage calls, one at a time, no retry (3 on a manual run): 5 calls with them off, 7 to 8 with them on (9 on a manual run)
 - Data source: the **Helios MCP server** (Helios MCP connector). Everything is read-only.
 
+## Sample output
+
+Screenshots of every tab are in [claude/README.md](claude/README.md) (lab data, names blurred).
+
+![Fleet tab](docs/screenshots/fleet-health-claude.png)
+
+| Tab | Screenshot |
+|---|---|
+| Fleet | [fleet-health-claude.png](docs/screenshots/fleet-health-claude.png) |
+| Capacity | [capacity-claude.png](docs/screenshots/capacity-claude.png) |
+| Connectivity & Alerts | [connectivity-and-alerts-claude.png](docs/screenshots/connectivity-and-alerts-claude.png) |
+| Compliance Check | [compliance-check-claude.png](docs/screenshots/compliance-check-claude.png) |
+| Run Metrics | [run-metrics-claude.png](docs/screenshots/run-metrics-claude.png) |
+| Settings | [settings-claude.png](docs/screenshots/settings-claude.png) |
+| LLM usage disclaimer | [llm-usage-disclaimer-claude.png](docs/screenshots/llm-usage-disclaimer-claude.png) |
+| Audit trail | [audit-trail-claude.png](docs/screenshots/audit-trail-claude.png) |
+
 ## What you get
 
 A cluster multi-select (all registered clusters, tagged connected / not connected, remembered in the browser) above the tabs, and a capacity threshold (default 80%).
